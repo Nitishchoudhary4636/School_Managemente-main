@@ -23,9 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
         <Script id="data-layer-init" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];`}
         </Script>
@@ -33,6 +31,10 @@ export default function RootLayout({ children }) {
           src="https://cdn.evgnet.com/beacon/a556rq555550mxe43n3n3n091568480/demos/scripts/evergage.min.js"
           strategy="beforeInteractive"
         />
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <Script src="/evergage-sitemap.js" strategy="afterInteractive" />
         <McpPageTracker />
         <div id="product-recommendation" className="global-product-recommendation" aria-hidden="true" />
