@@ -35,7 +35,6 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Script src="/evergage-sitemap.js" strategy="afterInteractive" />
         <McpPageTracker />
         <div id="product-recommendation" className="global-product-recommendation" aria-hidden="true" />
         <Header></Header>
