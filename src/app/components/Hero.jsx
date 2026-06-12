@@ -41,6 +41,7 @@ export default function Hero() {
     <>
       {/* Hero Section */}
       <section
+        id="hero"
         className="relative bg-cover bg-center bg-no-repeat text-white h-[60vh] sm:h-[70vh] md:h-[80vh] transition-all duration-1000 ease-in-out"
         style={{ backgroundImage: `url('${slides[currentSlide].image}')` }}
       >

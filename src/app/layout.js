@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import McpPageTracker from "./components/McpPageTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,10 +26,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script id="data-layer-init" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];`}
+        </Script>
         <Script
           src="https://cdn.evgnet.com/beacon/a556rq555550mxe43n3n3n091568480/demos/scripts/evergage.min.js"
           strategy="beforeInteractive"
         />
+        <Script src="/evergage-sitemap.js" strategy="afterInteractive" />
+        <McpPageTracker />
+        <div id="product-recommendation" className="global-product-recommendation" aria-hidden="true" />
         <Header></Header>
         {children}
         <Footer></Footer>

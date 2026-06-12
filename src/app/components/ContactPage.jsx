@@ -23,7 +23,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-12 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="contact-us contact-form-section min-h-screen bg-gradient-to-b from-blue-50 to-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -144,7 +144,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-[#163269] mb-2">Admission Enquiry</h2>
               <p className="text-gray-600 mb-8">Please fill this form and our team will contact you shortly</p>
               
-              <form method="get" className="space-y-6">
+              <form id="authForm" method="get" className="space-y-6">
                 {/* Kid's Name */}
                 <div className="space-y-2">
                   <label className="block text-sm font-medium text-gray-700">Child's Full Name</label>
@@ -154,6 +154,7 @@ export default function ContactPage() {
                     </div>
                     <input
                       type="text"
+                      id="name"
                       name="kidName"
                       value={form.kidName}
                       onChange={handleChange}
@@ -221,6 +222,23 @@ export default function ContactPage() {
                   </div>
                 </div>
                 
+                {/* Email */}
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-gray-700">Email Address</label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <FaEnvelope className="text-gray-400" />
+                    </div>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="block w-full pl-10 pr-3 py-3 rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-[#279989] focus:border-transparent transition placeholder-gray-400"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+
                 {/* Contact Number */}
                 <div className="space-y-2">
                   <label className="block text-sm font-medium text-gray-700">Mobile Number</label>
@@ -230,6 +248,7 @@ export default function ContactPage() {
                     </div>
                     <input
                       type="tel"
+                      id="phone"
                       name="contact"
                       value={form.contact}
                       onChange={handleChange}
@@ -260,6 +279,11 @@ export default function ContactPage() {
                   </div>
                 </div>
                 
+                <label className="flex items-center gap-2 text-sm text-gray-600">
+                  <input type="checkbox" id="chkOffersChecked" name="chkOffersChecked" />
+                  Send me updates and school news
+                </label>
+
                 {/* Submit Button */}
                 <motion.button
                   type="submit"

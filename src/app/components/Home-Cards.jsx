@@ -50,7 +50,7 @@ export default function HomeCards() {
   };
 
   return (
-    <section className=" py-6 md:py-12  bg-white">
+    <section className="featured-products py-6 md:py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Improved Header */}
         <div className="text-center  mb-8 px-4">

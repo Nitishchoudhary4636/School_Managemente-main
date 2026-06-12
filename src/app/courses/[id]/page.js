@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { courses } from "@/app/data/courses";
+import CourseMcpDataLayer from "@/app/components/CourseMcpDataLayer";
 import {
   HiOutlineBookOpen,
   HiBuildingLibrary,
@@ -22,6 +23,7 @@ export default async function CourseDetail({ params }) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f0fdf4] to-[#ecfdf5]">
+      <CourseMcpDataLayer course={course} />
       {/* Floating decorative elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {[...Array(12)].map((_, i) => (
@@ -171,16 +173,24 @@ export default async function CourseDetail({ params }) {
                   </h2>
                   <p className="text-lg text-gray-600">Everything you need to know about this course</p>
                 </div>
-                {course.syllabus && (
-                  <a
-                    href={course.syllabus}
-                    download
-                    className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-bold rounded-xl text-white bg-gradient-to-r from-[#279989] to-[#44883E] hover:from-[#279989]/90 hover:to-[#44883E]/90 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+                <div className="flex flex-wrap gap-4">
+                  <button
+                    type="button"
+                    className="btn-large inline-flex items-center px-8 py-4 border border-transparent text-lg font-bold rounded-xl text-white bg-gradient-to-r from-[#279989] to-[#44883E] hover:from-[#279989]/90 hover:to-[#44883E]/90 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
                   >
-                    <HiArrowDownTray className="mr-3 h-6 w-6" />
-                    Download Full Syllabus
-                  </a>
-                )}
+                    Enroll in This Course
+                  </button>
+                  {course.syllabus && (
+                    <a
+                      href={course.syllabus}
+                      download
+                      className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-bold rounded-xl text-white bg-gradient-to-r from-[#279989] to-[#44883E] hover:from-[#279989]/90 hover:to-[#44883E]/90 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+                    >
+                      <HiArrowDownTray className="mr-3 h-6 w-6" />
+                      Download Full Syllabus
+                    </a>
+                  )}
+                </div>
               </div>
 
               <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
@@ -230,6 +240,8 @@ export default async function CourseDetail({ params }) {
           </div>
         </div>
       </div>
+
+      <div id="pdp_recommendation" className="max-w-7xl mx-auto px-3 sm:px-6 pb-16" />
     </div>
   );
 }

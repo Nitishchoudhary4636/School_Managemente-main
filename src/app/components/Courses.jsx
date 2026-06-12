@@ -4,7 +4,7 @@ import { courses } from "@/app/data/courses";
 
 export default function Courses() {
   return (
-    <div className="max-w-8xl mx-auto px-3.5 sm:px-6 py-10 md:py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div className="products-section product-list max-w-8xl mx-auto px-3.5 sm:px-6 py-10 md:py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="text-center mb-10 md:mb-20">
         <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-[#279989] uppercase bg-[#279989]/10 rounded-full mb-4">
           Academic Excellence

@@ -40,8 +40,9 @@ const ContactForm = () => {
 
   return (
     <form
+      id="authForm"
       method="get"
-      className="max-w-6xl mx-auto py-6 px-8 pt-8 bg-white   space-y-10"
+      className="contact-us contact-form-section max-w-6xl mx-auto py-6 px-8 pt-8 bg-white space-y-10"
     >
       <header className="text-center space-y-3">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl  font-extrabold text-[#435370]">Interested in learning more about Seven Unique?</h2>
@@ -59,7 +60,7 @@ const ContactForm = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <input name="prefix" type="text" placeholder="Prefix" className={inputClass} onChange={handleChange} />
-          <input name="firstName" type="text" placeholder="First Name *" required className={inputClass} onChange={handleChange} />
+          <input id="name" name="firstName" type="text" placeholder="First Name *" required className={inputClass} onChange={handleChange} />
           <input name="lastName" type="text" placeholder="Last Name *" required className={inputClass} onChange={handleChange} />
         </div>
 
@@ -129,8 +130,8 @@ const ContactForm = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input name="phone" type="tel" placeholder="Preferred Phone Number *" required className={inputClass} onChange={handleChange} />
-          <input name="email" type="email" placeholder="Email Address *" required className={inputClass} onChange={handleChange} />
+          <input id="phone" name="phone" type="tel" placeholder="Preferred Phone Number *" required className={inputClass} onChange={handleChange} />
+          <input id="email" name="email" type="email" placeholder="Email Address *" required className={inputClass} onChange={handleChange} />
         </div>
       </section>
 
@@ -238,6 +239,11 @@ const ContactForm = () => {
           ))}
         </div>
       </section>
+
+      <label className="flex items-center gap-2 text-sm text-gray-600">
+        <input type="checkbox" id="chkOffersChecked" name="chkOffersChecked" onChange={handleChange} />
+        Send me updates and school news
+      </label>
 
       {/* Submit Button */}
       <div className="text-center">

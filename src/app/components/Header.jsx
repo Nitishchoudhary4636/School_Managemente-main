@@ -11,7 +11,7 @@ export default function Header() {
     "absolute left-0 -bottom-1 h-[2px] w-full origin-left scale-x-0 transform bg-[#7ca55d] transition-transform duration-300 group-hover:scale-x-100";
 
   return (
-    <header className="sticky top-0 z-50 bg-gray-50 text-[#163269] shadow-md">
+    <header className="navbar site-header sticky top-0 z-50 bg-gray-50 text-[#163269] shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-8 flex justify-between items-center">
         <div className="text-2xl font-bold">
           <a href="/">SCHOOL MANAGEMENT</a>
