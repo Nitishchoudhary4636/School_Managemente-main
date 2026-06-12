@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -24,6 +25,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+          src="https://cdn.evgnet.com/beacon/a556rq555550mxe43n3n3n091568480/demos/scripts/evergage.min.js"
+          strategy="beforeInteractive"
+        />
         <Header></Header>
         {children}
         <Footer></Footer>
